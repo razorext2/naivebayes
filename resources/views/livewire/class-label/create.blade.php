@@ -1,0 +1,22 @@
+<form wire:submit.prevent="store" class="flex h-fit flex-col gap-2 lg:gap-4">
+
+    <div>
+        <flux:select wire:model="form.model_id" label="Tipe Model" placeholder="Pilih tipe model...">
+            @forelse(\App\Models\DataMining\Model::all() as $row)
+                <flux:select.option value="{{ $row->id }}">{{ $row->name }}</flux:select.option>
+            @empty
+                <flux:select.option value="">Belum ada data model</flux:select.option>
+            @endforelse
+        </flux:select>
+    </div>
+
+    <div>
+        <flux:input type="text" placeholder="Input nama class..." label="Nama Class" wire:model="form.name" />
+    </div>
+
+    <div class="flex justify-start">
+        <flux:button type="submit" icon:trailing="chevron-right" variant="primary" color="green">
+            Simpan
+        </flux:button>
+    </div>
+</form>
