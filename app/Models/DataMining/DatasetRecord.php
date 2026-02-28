@@ -2,6 +2,7 @@
 
 namespace App\Models\DataMining;
 
+use App\Models\Alternative;
 use Illuminate\Database\Eloquent\Model;
 
 class DatasetRecord extends Model
@@ -11,6 +12,11 @@ class DatasetRecord extends Model
     public function dataset()
     {
         return $this->belongsTo(Dataset::class);
+    }
+
+    public function alternative()
+    {
+        return $this->belongsTo(Alternative::class);
     }
 
     public function classLabel()

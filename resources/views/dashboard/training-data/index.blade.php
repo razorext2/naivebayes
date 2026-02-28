@@ -1,0 +1,27 @@
+<x-layouts::app :title="__('Dashboard')">
+    <div class="flex h-full w-full flex-1 flex-col gap-4 rounded-xl">
+
+        <x-utils.bread-crumbs />
+
+        <flux:heading size="xl">Daftar Data Train</flux:heading>
+
+        <p class="text-sm text-gray-800 dark:text-white">
+            Berikut adalah daftar data train klasifikasi yang digunakan dalam sistem.
+            Anda dapat membuat, mengatur, dan mengelola data train Naive Bayes sesuai kebutuhan analisis.
+        </p>
+
+        <div class="flex items-center justify-start">
+            <flux:button href="{{ route('dataset.training-data.create', ['dataset' => $dataset]) }}" wire:navigate
+                icon="plus" variant="primary" color="green">
+                Tambah Dataset
+            </flux:button>
+        </div>
+
+        <div
+            class="relative flex-1 overflow-hidden rounded-xl border border-neutral-200 p-2 lg:p-4 dark:border-neutral-700">
+
+            @livewire('training-data.index')
+
+        </div>
+    </div>
+</x-layouts::app>

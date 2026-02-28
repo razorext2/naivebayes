@@ -39,6 +39,11 @@
 
                 <flux:table.cell class="flex gap-x-2">
                     <flux:button size="sm" color="blue" variant="primary" wire:navigate
+                        href="{{ route('dataset.training-data.index', ['dataset' => $row->id]) }}" icon="queue-list">
+                        Kelola Data
+                    </flux:button>
+
+                    <flux:button size="sm" color="blue" variant="primary" wire:navigate
                         href="{{ route('dataset.edit', ['id' => $row->id]) }}" icon="pencil" />
 
                     <flux:button size="sm" color="red"

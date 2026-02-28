@@ -42,11 +42,6 @@
                     {{ __('Dataset') }}
                 </flux:sidebar.item>
 
-                <flux:sidebar.item icon="academic-cap" :href="route('dataset-record.index')"
-                    :current="request()->routeIs('dataset-record.*')" wire:navigate>
-                    {{ __('Data Training') }}
-                </flux:sidebar.item>
-
             </flux:sidebar.group>
 
             <flux:sidebar.group :heading="__('Naive Bayes')" class="mt-2 grid">

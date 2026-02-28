@@ -12,29 +12,26 @@ Route::middleware(['auth', 'verified'])->group(function () {
             Route::view('/', 'dashboard')->name('dashboard');
 
             // model
-            Route::view('/model', 'dashboard.model.index')->name('model.index');
-            Route::view('/model/create', 'dashboard.model.create')->name('model.create');
-            Route::view('/model/{id}/edit', 'dashboard.model.edit')->name('model.edit');
+            Route::view('/models', 'dashboard.model.index')->name('model.index');
+            Route::view('/models/create', 'dashboard.model.create')->name('model.create');
+            Route::view('/models/{id}/edit', 'dashboard.model.edit')->name('model.edit');
 
             // feature
-            Route::view('/feature', 'dashboard.feature.index')->name('feature.index');
-            Route::view('/feature/create', 'dashboard.feature.create')->name('feature.create');
-            Route::view('/feature/{id}/edit', 'dashboard.feature.edit')->name('feature.edit');
+            Route::view('/features', 'dashboard.feature.index')->name('feature.index');
+            Route::view('/features/create', 'dashboard.feature.create')->name('feature.create');
+            Route::view('/features/{id}/edit', 'dashboard.feature.edit')->name('feature.edit');
 
             // classlabel
-            Route::view('/class-label', 'dashboard.class-label.index')->name('class-label.index');
-            Route::view('/class-label/create', 'dashboard.class-label.create')->name('class-label.create');
-            Route::view('/class-label/{id}/edit', 'dashboard.class-label.edit')->name('class-label.edit');
+            Route::view('/class-labels', 'dashboard.class-label.index')->name('class-label.index');
+            Route::view('/class-labels/create', 'dashboard.class-label.create')->name('class-label.create');
+            Route::view('/class-labels/{id}/edit', 'dashboard.class-label.edit')->name('class-label.edit');
 
             // dataset
-            Route::view('/dataset', 'dashboard.dataset.index')->name('dataset.index');
-            Route::view('/dataset/create', 'dashboard.dataset.create')->name('dataset.create');
-            Route::view('/dataset/{id}/edit', 'dashboard.dataset.edit')->name('dataset.edit');
-
-            // datasetrecord
-            Route::view('/dataset-record', 'dashboard.dataset-record.index')->name('dataset-record.index');
-            Route::view('/dataset-record/create', 'dashboard.dataset-record.create')->name('dataset-record.create');
-            Route::view('/dataset-record/{id}/edit', 'dashboard.dataset-record.edit')->name('dataset-record.edit');
+            Route::view('/datasets', 'dashboard.dataset.index')->name('dataset.index');
+            Route::view('/datasets/create', 'dashboard.dataset.create')->name('dataset.create');
+            Route::view('/datasets/{id}/edit', 'dashboard.dataset.edit')->name('dataset.edit');
+            Route::view('/datasets/{dataset}/training-data', 'dashboard.training-data.index')->name('dataset.training-data.index');
+            Route::view('/datasets/{dataset}/training-data/create', 'dashboard.training-data.create')->name('dataset.training-data.create');
 
             // featurevalue
             Route::view('/feature-value', 'dashboard.feature-value.index')->name('feature-value.index');
