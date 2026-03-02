@@ -20,6 +20,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
             Route::view('/features', 'dashboard.feature.index')->name('feature.index');
             Route::view('/features/create', 'dashboard.feature.create')->name('feature.create');
             Route::view('/features/{id}/edit', 'dashboard.feature.edit')->name('feature.edit');
+            Route::view('/features/{id}/options', 'dashboard.feature.options')->name('feature.options');
 
             // classlabel
             Route::view('/class-labels', 'dashboard.class-label.index')->name('class-label.index');

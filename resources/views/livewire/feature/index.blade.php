@@ -38,6 +38,11 @@
                 </flux:table.cell>
 
                 <flux:table.cell class="flex gap-x-2">
+                    <flux:button size="sm" color="green" variant="primary" wire:navigate
+                        href="{{ route('feature.options', ['id' => $row->id]) }}" icon="queue-list">
+                        Kelola Opsi
+                    </flux:button>
+
                     <flux:button size="sm" color="blue" variant="primary" wire:navigate
                         href="{{ route('feature.edit', ['id' => $row->id]) }}" icon="pencil" />
 

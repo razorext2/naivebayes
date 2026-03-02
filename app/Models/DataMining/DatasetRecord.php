@@ -7,7 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class DatasetRecord extends Model
 {
-    protected $fillable = ['dataset_id', 'class_label_id'];
+    protected $fillable = [
+        'dataset_id',
+        'alternative_id',
+        'class_label_id',
+    ];
 
     public function dataset()
     {

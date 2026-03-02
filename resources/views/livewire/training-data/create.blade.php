@@ -1,15 +1,5 @@
 <div class="space-y-6">
 
-    {{-- header --}}
-    <div>
-        <h1 class="text-xl font-semibold">
-            Tambah Data Training
-        </h1>
-        <p class="text-sm text-gray-500">
-            Tambahkan satu data latih lengkap untuk proses pelatihan model.
-        </p>
-    </div>
-
     <flux:card>
 
         <form wire:submit="store" class="space-y-6">
@@ -50,16 +40,13 @@
                             <flux:select label="{{ $feature->name }}" wire:model="values.{{ $feature->id }}"
                                 placeholder="Pilih {{ $feature->name }}">
 
-                                @php
-                                    // ambil value unik yang pernah ada
-                                    $options = $feature->values()->distinct()->pluck('value');
-                                @endphp
-
-                                @foreach ($options as $option)
-                                    <flux:select.option value="{{ $option }}">
-                                        {{ $option }}
+                                @forelse ($feature->options as $option)
+                                    <flux:select.option value="{{ $option->value }}">
+                                        {{ $option->value }}
                                     </flux:select.option>
-                                @endforeach
+                                @empty
+                                    <flux:select.option value="">Belum ada data</flux:select.option>
+                                @endforelse
 
                             </flux:select>
                         @endif

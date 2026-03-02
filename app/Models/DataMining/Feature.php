@@ -17,4 +17,9 @@ class Feature extends Model
     {
         return $this->hasMany(FeatureValue::class);
     }
+
+    public function options()
+    {
+        return $this->hasMany(FeatureOption::class);
+    }
 }

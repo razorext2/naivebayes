@@ -2,11 +2,14 @@
 
 namespace App\Livewire\Feature;
 
+use App\Livewire\Forms\FeatureOption;
 use Livewire\Component;
 
 class Index extends Component
 {
     use \App\Livewire\Concerns\HandlesErrors, \Livewire\WithPagination;
+
+    public FeatureOption $form;
 
     public $sortBy = 'created_at';
 
