@@ -20,7 +20,10 @@
 
             {{-- class label --}}
             <div>
-                <flux:select label="Class" wire:model="class_label_id" placeholder="Pilih Class">
+                <flux:select label="Class" wire:model="class_label_id">
+                    <flux:select.option>
+                        Pilih Class
+                    </flux:select.option>
                     @foreach ($dataset->model->classLabels as $class)
                         <flux:select.option value="{{ $class->id }}">
                             {{ $class->name }}
@@ -37,8 +40,10 @@
 
                         {{-- categorical --}}
                         @if ($feature->type === 'categorical')
-                            <flux:select label="{{ $feature->name }}" wire:model="values.{{ $feature->id }}"
-                                placeholder="Pilih {{ $feature->name }}">
+                            <flux:select label="{{ $feature->name }}" wire:model="values.{{ $feature->id }}">
+                                <flux:select.option>
+                                    Pilih Nilai {{ $feature->name }}
+                                </flux:select.option>
 
                                 @forelse ($feature->options as $option)
                                     <flux:select.option value="{{ $option->value }}">

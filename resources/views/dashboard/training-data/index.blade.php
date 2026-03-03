@@ -20,7 +20,7 @@
         <div
             class="relative flex-1 overflow-hidden rounded-xl border border-neutral-200 p-2 lg:p-4 dark:border-neutral-700">
 
-            @livewire('training-data.index')
+            @livewire('training-data.index', ['id' => $dataset])
 
         </div>
     </div>

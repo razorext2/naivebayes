@@ -18,9 +18,9 @@ class Create extends Component
 
     public $features;
 
-    public $class_label_id;
+    public ?int $class_label_id = null;
 
-    public $id;
+    public ?string $id = '';
 
     public array $values = [];
 
@@ -78,6 +78,8 @@ class Create extends Component
                 'title' => 'Berhasil',
                 'text' => 'Data training berhasil ditambahkan.',
             ]);
+
+            $this->redirectRoute('dataset.training-data.index', ['dataset' => $this->dataset->id]);
         }, 'Gagal menambahkan data training', [
             'user_id' => auth()->id(),
             'action' => 'create training data',
